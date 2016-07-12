@@ -1,16 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "sourceMap": true,
     "declaration": true,
     "outDir": "./dist",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "removeComments": true
   },
   "exclude": [
-    "node_modules",
-    "dist"
+    "typings/browser.d.ts",
+    "typings/browser",
+    "node_modules"
+  ],
+  "files": [
+    "ng2-froala-editor.ts"
   ]
 }

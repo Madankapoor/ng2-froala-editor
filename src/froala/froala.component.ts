@@ -7,12 +7,13 @@ declare var $: any;
   template:`<textarea></textarea>`
 })
 
-export class FroalaCompnoent implements OnInit, OnDestroy {
+export class FroalaEditorCompnoent implements OnInit, OnDestroy {
 
   @Input() froalaData: any;
   @Input() froalaOptions: any;
-  @Output() model = new EventEmitter();
-  froalaArea: any;
+  @Output() model: EventEmitter<any> = new EventEmitter();
+  @Output() editorInitialized: EventEmitter<any> = new EventEmitter();
+  static froalaEditorInstance: any;
   isEditorInitialized: Boolean = false;
   froalaContent: any;
 
@@ -21,11 +22,13 @@ export class FroalaCompnoent implements OnInit, OnDestroy {
   }
 
   ngOnInit() { 
-    this.froalaArea = $(this.el.nativeElement).find("textarea");
+    FroalaEditorCompnoent.froalaEditorInstance = $(this.el.nativeElement).find("textarea");
+
+    // Initialize the listeners for froala editors
     this.initListener();
 
     this.froalaOptions = this.froalaOptions ? this.froalaOptions : {};
-    this.froalaArea.froalaEditor(this.froalaOptions);  
+    FroalaEditorCompnoent.froalaEditorInstance.froalaEditor(this.froalaOptions);  
 
     if (this.isEditorInitialized && this.froalaData) {
       this.setContent();
@@ -33,34 +36,48 @@ export class FroalaCompnoent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() { 
-    this.froalaArea.off("froalaEditor.initialized");
-    this.froalaArea.off("froalaEditor.contentChanged");
+    FroalaEditorCompnoent.froalaEditorInstance.off("froalaEditor.initialized");
+    FroalaEditorCompnoent.froalaEditorInstance.off("froalaEditor.contentChanged");
   }
 
+  /**
+   * Listen to initialized and content changed event
+   */
   initListener() {
-    this.froalaArea.on('froalaEditor.initialized', (e, editor) => {
+    FroalaEditorCompnoent.froalaEditorInstance.on('froalaEditor.initialized', (e, editor) => {
       this.isEditorInitialized = true;
       this.getContent();
+      this.editorInitialized.emit(null);
     });
 
-    this.froalaArea.on('froalaEditor.contentChanged', (e, editor) => {
+    FroalaEditorCompnoent.froalaEditorInstance.on('froalaEditor.contentChanged', (e, editor) => {
       if (this.isEditorInitialized) {
         this.getContent();
       }
     });
   }
 
+  /**
+   * Set <p></p> into the editor when the editor has empty content
+   */
   setDefaultContent() {
     let content = "<p></p>";
-    this.froalaArea.froalaEditor('html.set', content);
+    FroalaEditorCompnoent.froalaEditorInstance.froalaEditor('html.set', content);
+    this.model.emit(content);
   }
 
+  /**
+   * Set html content from the @Input() data
+   */
   setContent() {
-    this.froalaArea.froalaEditor('html.set', this.froalaData);
+    FroalaEditorCompnoent.froalaEditorInstance.froalaEditor('html.set', this.froalaData);
   }
 
+  /**
+   * Get content from the editor and update the @Output() model
+   */
   getContent() {
-    this.froalaContent = this.froalaArea.froalaEditor('html.get', true);
+    this.froalaContent = FroalaEditorCompnoent.froalaEditorInstance.froalaEditor('html.get', true);
     if (!this.froalaContent) {
       this.setDefaultContent();
     }

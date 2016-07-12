@@ -1,15 +1,16 @@
 import {Component, OnInit, Input, Output, EventEmitter} from "@angular/core";
-import {FroalaCompnoent} from "../froala/froala.component";
+import {FroalaEditorCompnoent} from "../froala/froala.component";
 
+declare var require: any;
 declare var $: any;
 
 @Component({
   selector: "main",
   templateUrl: "./main.html",
-  directives: [FroalaCompnoent]
+  directives: [FroalaEditorCompnoent]
 })
 
-export class MainComponent implements OnInit{
+export class MainComponent implements OnInit {
 
   text: string = '<div>hey whatsup, we are testing froala editor</div>';
 
@@ -17,8 +18,12 @@ export class MainComponent implements OnInit{
     charCounterCount: true
   };
 
+  froalaOptions2: any = {
+    charCounterCount: true
+  };
+
   constructor() {
-    
+
   }
 
   ngOnInit() {
@@ -26,10 +31,27 @@ export class MainComponent implements OnInit{
   }
   
   onFroalaModelChanged(event: any) {
-    console.log(event);
     setTimeout(() => {
       this.text = event;
     });
+  }
+
+  onFroalaModelChanged2(event: any) {
+    setTimeout(() => {
+      this.text = event;
+    });
+  }
+
+  onEditorInitialized(event?: any) {
+    console.log(FroalaEditorCompnoent.froalaEditorInstance);
+  }
+  
+  onEditorInitialized2(event?: any) {
+    console.log(FroalaEditorCompnoent.froalaEditorInstance);
+  }
+
+  testComponent() {
+    console.log(FroalaEditorCompnoent.froalaEditorInstance);
   }
 
 }

@@ -1,4 +1,7 @@
 <h1>
   Hey I am testing Froala Editor
 </h1>
-<froala [froalaOptions]="froalaOptions" [froalaData]="text" (model)="onFroalaModelChanged($event)"></froala>
+<froala [froalaOptions]="froalaOptions" [froalaData]="text" (model)="onFroalaModelChanged($event)" (editorInitialized)="onEditorInitialized()"></froala>
+<froala [froalaOptions]="froalaOptions2" [froalaData]="text" (model)="onFroalaModelChanged2($event)" (editorInitialized)="onEditorInitialized2()"></froala>
+
+<button (click)="testComponent()">Component</button>
