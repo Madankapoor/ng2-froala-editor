@@ -1,6 +1,6 @@
 {
   "name": "ng2-froala-editor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Froala Editor for Angular2",
   "scripts": {
     "typings-install": "typings install",

@@ -2,7 +2,8 @@
 
 This is Angular2 component for [Froala Editor](https://github.com/froala/wysiwyg-editor). This allows developers
 to easily integrate this powerful WYSIWYG editor into any applications.
-Most of the method calls, set up events listening, and options for the editors are still the same and follow the original docs of Froala Editor
+Most of the method calls, set up events listening, and options for the editors are still the same and follow the original docs of Froala Editor  
+In order to use this component, you would need to include all the jQuery and Froala js and css files in index.html
 Please feel free to make suggestions if you have ideas to improve it
 
 ## Demo
