@@ -9,17 +9,18 @@ declare var $: any;
 
 export class FroalaEditorCompnoent implements OnInit, OnDestroy {
 
-  @Input() froalaData: any;
+  @Input() froalaData: string;
   @Input() froalaOptions: any;
   @Output() model: EventEmitter<any> = new EventEmitter();
   @Output() editorInitialized: EventEmitter<any> = new EventEmitter();
-  static froalaEditorInstance: any;
+  private static froalaEditorInstance: any;
   isEditorInitialized: Boolean = false;
   froalaContent: any;
 
   constructor(private el: ElementRef) {
     
   }
+
 
   ngOnInit() { 
     FroalaEditorCompnoent.froalaEditorInstance = $(this.el.nativeElement).find("textarea");
@@ -32,9 +33,12 @@ export class FroalaEditorCompnoent implements OnInit, OnDestroy {
 
     if (this.isEditorInitialized && this.froalaData) {
       this.setContent();
-    } 
+    }
   }
 
+  /**
+   * When component destroys, unset the initialized and contentChanged event 
+   */
   ngOnDestroy() { 
     FroalaEditorCompnoent.froalaEditorInstance.off("froalaEditor.initialized");
     FroalaEditorCompnoent.froalaEditorInstance.off("froalaEditor.contentChanged");
@@ -84,5 +88,15 @@ export class FroalaEditorCompnoent implements OnInit, OnDestroy {
     else {
       this.model.emit(this.froalaContent);
     }
+  }
+
+  /**
+   * 
+   * Returns a froalaEditorInstance that people can use to utilize the editor
+   * @static
+   * @returns [any] editor
+   */
+  static getFroalaInstance() {
+    return FroalaEditorCompnoent.froalaEditorInstance;
   }
 }

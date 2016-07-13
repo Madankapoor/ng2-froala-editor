@@ -13,9 +13,11 @@ declare var $: any;
 export class MainComponent implements OnInit {
 
   text: string = '<div>hey whatsup, we are testing froala editor</div>';
+  editor1: any;
+  editor2: any;
 
   froalaOptions: any = {
-    charCounterCount: true
+    height: 300
   };
 
   froalaOptions2: any = {
@@ -43,15 +45,21 @@ export class MainComponent implements OnInit {
   }
 
   onEditorInitialized(event?: any) {
-    console.log(FroalaEditorCompnoent.froalaEditorInstance);
+    this.editor1 = FroalaEditorCompnoent.getFroalaInstance();
+    this.editor1.on('froalaEditor.contentChanged', (e, editor) => {
+      console.log("contentChanged");
+    });
+    console.log(this.editor1);
   }
   
   onEditorInitialized2(event?: any) {
-    console.log(FroalaEditorCompnoent.froalaEditorInstance);
+    this.editor2 = FroalaEditorCompnoent.getFroalaInstance();
+    console.log(this.editor2);
   }
 
   testComponent() {
-    console.log(FroalaEditorCompnoent.froalaEditorInstance);
+    this.editor1.froalaEditor('codeView.toggle');
+    this.editor2.froalaEditor('codeView.toggle');
   }
 
 }

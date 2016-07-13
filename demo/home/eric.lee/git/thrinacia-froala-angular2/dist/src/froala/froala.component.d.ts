@@ -1,11 +1,11 @@
 import { OnInit, OnDestroy, EventEmitter, ElementRef } from '@angular/core';
 export declare class FroalaEditorCompnoent implements OnInit, OnDestroy {
     private el;
-    froalaData: any;
+    froalaData: string;
     froalaOptions: any;
     model: EventEmitter<any>;
     editorInitialized: EventEmitter<any>;
-    static froalaEditorInstance: any;
+    private static froalaEditorInstance;
     isEditorInitialized: Boolean;
     froalaContent: any;
     constructor(el: ElementRef);
@@ -15,4 +15,5 @@ export declare class FroalaEditorCompnoent implements OnInit, OnDestroy {
     setDefaultContent(): void;
     setContent(): void;
     getContent(): void;
+    static getFroalaInstance(): any;
 }

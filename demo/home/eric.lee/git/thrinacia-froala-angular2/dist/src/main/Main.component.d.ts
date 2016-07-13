@@ -1,6 +1,8 @@
 import { OnInit } from "@angular/core";
 export declare class MainComponent implements OnInit {
     text: string;
+    editor1: any;
+    editor2: any;
     froalaOptions: any;
     froalaOptions2: any;
     constructor();
