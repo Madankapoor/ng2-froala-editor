@@ -21,6 +21,11 @@ export class FroalaEditorCompnoent implements OnInit, OnDestroy {
     
   }
 
+  ngOnChanges(changes) {
+    if (changes.hasOwnProperty('froalaData') && this.isEditorInitialized) {
+      this.setContent();
+    }
+  }
 
   ngOnInit() { 
     FroalaEditorCompnoent.froalaEditorInstance = $(this.el.nativeElement).find("textarea");
@@ -29,11 +34,7 @@ export class FroalaEditorCompnoent implements OnInit, OnDestroy {
     this.initListener();
 
     this.froalaOptions = this.froalaOptions ? this.froalaOptions : {};
-    FroalaEditorCompnoent.froalaEditorInstance.froalaEditor(this.froalaOptions);  
-
-    if (this.isEditorInitialized && this.froalaData) {
-      this.setContent();
-    }
+    FroalaEditorCompnoent.froalaEditorInstance.froalaEditor(this.froalaOptions);
   }
 
   /**
@@ -50,6 +51,9 @@ export class FroalaEditorCompnoent implements OnInit, OnDestroy {
   initListener() {
     FroalaEditorCompnoent.froalaEditorInstance.on('froalaEditor.initialized', (e, editor) => {
       this.isEditorInitialized = true;
+      if (this.froalaData) {
+        this.setContent();
+      }
       this.getContent();
       this.editorInitialized.emit(null);
     });

@@ -49,7 +49,7 @@ export class MainComponent implements OnInit {
     this.editor1.on('froalaEditor.contentChanged', (e, editor) => {
       console.log("contentChanged");
     });
-    console.log(this.editor1);
+    // console.log(this.editor1);
   }
   
   onEditorInitialized2(event?: any) {

@@ -5,7 +5,9 @@ webpackJsonp([0],{
 
 	"use strict";
 	var platform_browser_dynamic_1 = __webpack_require__(1);
+	var core_1 = __webpack_require__(5);
 	var Main_component_1 = __webpack_require__(328);
+	core_1.enableProdMode();
 	platform_browser_dynamic_1.bootstrap(Main_component_1.MainComponent);
 
 
@@ -55,7 +57,6 @@ webpackJsonp([0],{
 	        this.editor1.on('froalaEditor.contentChanged', function (e, editor) {
 	            console.log("contentChanged");
 	        });
-	        console.log(this.editor1);
 	    };
 	    MainComponent.prototype.onEditorInitialized2 = function (event) {
 	        this.editor2 = froala_component_1.FroalaEditorCompnoent.getFroalaInstance();
@@ -101,14 +102,16 @@ webpackJsonp([0],{
 	        this.editorInitialized = new core_1.EventEmitter();
 	        this.isEditorInitialized = false;
 	    }
+	    FroalaEditorCompnoent.prototype.ngOnChanges = function (changes) {
+	        if (changes.hasOwnProperty('froalaData') && this.isEditorInitialized) {
+	            this.setContent();
+	        }
+	    };
 	    FroalaEditorCompnoent.prototype.ngOnInit = function () {
 	        FroalaEditorCompnoent.froalaEditorInstance = $(this.el.nativeElement).find("textarea");
 	        this.initListener();
 	        this.froalaOptions = this.froalaOptions ? this.froalaOptions : {};
 	        FroalaEditorCompnoent.froalaEditorInstance.froalaEditor(this.froalaOptions);
-	        if (this.isEditorInitialized && this.froalaData) {
-	            this.setContent();
-	        }
 	    };
 	    FroalaEditorCompnoent.prototype.ngOnDestroy = function () {
 	        FroalaEditorCompnoent.froalaEditorInstance.off("froalaEditor.initialized");
@@ -118,6 +121,9 @@ webpackJsonp([0],{
 	        var _this = this;
 	        FroalaEditorCompnoent.froalaEditorInstance.on('froalaEditor.initialized', function (e, editor) {
 	            _this.isEditorInitialized = true;
+	            if (_this.froalaData) {
+	                _this.setContent();
+	            }
 	            _this.getContent();
 	            _this.editorInitialized.emit(null);
 	        });
@@ -180,7 +186,7 @@ webpackJsonp([0],{
 /***/ 330:
 /***/ function(module, exports) {
 
-	module.exports = "<h1>\n  Hey I am testing Froala Editor\n</h1>\n<froala [froalaOptions]=\"froalaOptions\" [froalaData]=\"text\" (model)=\"onFroalaModelChanged($event)\" (editorInitialized)=\"onEditorInitialized()\"></froala>\n<froala [froalaOptions]=\"froalaOptions2\" [froalaData]=\"text\" (model)=\"onFroalaModelChanged2($event)\" (editorInitialized)=\"onEditorInitialized2()\"></froala>\n\n<button (click)=\"testComponent()\">Component</button>";
+	module.exports = "<h1>\n  Hey I am testing Froala Editor\n</h1>\n<froala [froalaOptions]=\"froalaOptions\" [froalaData]=\"text\" (model)=\"onFroalaModelChanged($event)\" (editorInitialized)=\"onEditorInitialized()\"></froala>\n<!--<froala [froalaOptions]=\"froalaOptions2\" [froalaData]=\"text\" (model)=\"onFroalaModelChanged2($event)\" (editorInitialized)=\"onEditorInitialized2()\"></froala>-->\n\n<button (click)=\"testComponent()\">Component</button>";
 
 /***/ }
 

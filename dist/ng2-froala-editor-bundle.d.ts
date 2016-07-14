@@ -11,6 +11,7 @@ declare module "src/froala/froala.component" {
         isEditorInitialized: Boolean;
         froalaContent: any;
         constructor(el: ElementRef);
+        ngOnChanges(changes: any): void;
         ngOnInit(): void;
         ngOnDestroy(): void;
         initListener(): void;

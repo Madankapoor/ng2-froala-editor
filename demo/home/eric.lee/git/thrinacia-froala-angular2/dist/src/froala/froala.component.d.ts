@@ -9,6 +9,7 @@ export declare class FroalaEditorCompnoent implements OnInit, OnDestroy {
     isEditorInitialized: Boolean;
     froalaContent: any;
     constructor(el: ElementRef);
+    ngOnChanges(changes: any): void;
     ngOnInit(): void;
     ngOnDestroy(): void;
     initListener(): void;

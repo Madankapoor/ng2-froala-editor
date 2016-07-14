@@ -16,14 +16,16 @@ var FroalaEditorCompnoent = (function () {
         this.editorInitialized = new core_1.EventEmitter();
         this.isEditorInitialized = false;
     }
+    FroalaEditorCompnoent.prototype.ngOnChanges = function (changes) {
+        if (changes.hasOwnProperty('froalaData') && this.isEditorInitialized) {
+            this.setContent();
+        }
+    };
     FroalaEditorCompnoent.prototype.ngOnInit = function () {
         FroalaEditorCompnoent.froalaEditorInstance = $(this.el.nativeElement).find("textarea");
         this.initListener();
         this.froalaOptions = this.froalaOptions ? this.froalaOptions : {};
         FroalaEditorCompnoent.froalaEditorInstance.froalaEditor(this.froalaOptions);
-        if (this.isEditorInitialized && this.froalaData) {
-            this.setContent();
-        }
     };
     FroalaEditorCompnoent.prototype.ngOnDestroy = function () {
         FroalaEditorCompnoent.froalaEditorInstance.off("froalaEditor.initialized");
@@ -33,6 +35,9 @@ var FroalaEditorCompnoent = (function () {
         var _this = this;
         FroalaEditorCompnoent.froalaEditorInstance.on('froalaEditor.initialized', function (e, editor) {
             _this.isEditorInitialized = true;
+            if (_this.froalaData) {
+                _this.setContent();
+            }
             _this.getContent();
             _this.editorInitialized.emit(null);
         });
