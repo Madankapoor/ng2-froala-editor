@@ -1,7 +1,11 @@
 {
   "name": "ng2-froala-editor",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "Froala Editor for Angular2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericleethrinacia/ng2-froala-editor"
+  },
   "scripts": {
     "typings-install": "typings install",
     "tsc": "tsc",

@@ -3,7 +3,7 @@
 This is Angular2 component for [Froala Editor](https://github.com/froala/wysiwyg-editor). This allows developers
 to easily integrate this powerful WYSIWYG editor into any applications.
 Most of the method calls, set up events listening, and options for the editors are still the same and follow the original docs of Froala Editor  
-In order to use this component, you would need to include all the jQuery and Froala js and css files in index.html
+In order to use this component, you would need to include all the `font-awesome` css, `jQuery` and `Froala` js and css files in index.html
 Please feel free to make suggestions if you have ideas to improve it
 
 ## Demo
@@ -22,20 +22,47 @@ The current version used to develop this module is angular2 **2.0.0-rc.4**.
 
 ### CommonJS
 
-ng2-froala-editor ships unbundled files as well. To use it, simply add
+To use ng2-froala-editor, simply add this into your component
 ```
-import {FroalaEditorCompnoent} from "ng2-froala-editor/froala.component";
+import {FroalaEditorCompnoent} from "ng2-froala-editor/ng2-froala-editor";
 ```
 
 ### SystemJS
 
-(Haven't implemented yet)
+In your systemjs.config.js, add  
+```
+'ng2-froala-editor':          'node_modules/ng2-froala-editor'
+```
+into **map** property so it would like:
+```
+// map tells the System loader where to look for things
+var map = {
+  'app':                        'app', // 'dist',
+  '@angular':                   'node_modules/@angular',
+  'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
+  'rxjs':                       'node_modules/rxjs',
+  'ng2-froala-editor':          'node_modules/ng2-froala-editor'
+};
+```
+Also add:
+```
+'ng2-froala-editor':          { main: 'ng2-froala-editor.js', defaultExtension: 'js'}
+```
+into **packages** property so it would like:  
+```
+var packages = {
+  'app':                        { main: 'main.js',  defaultExtension: 'js' },
+  'rxjs':                       { defaultExtension: 'js' },
+  'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
+  'ng2-froala-editor':          { main: 'ng2-froala-editor.js', defaultExtension: 'js'}
+};
+```
 
 ## Example
 
 ```
 import {Component, OnInit} from "@angular/core";
-import {FroalaEditorCompnoent} from "ng2-froala-editor/froala.component";
+import {FroalaEditorCompnoent} from "ng2-froala-editor/ng2-froala-editor";
 
 @Component({
   selector: 'my-component',
