@@ -102,12 +102,6 @@ export class MyComponent implements OnInit {
       console.log("editor is focused");
     });
   }
-
-  onFroalaModelChanged(event: any) {
-    setTimeout(() => {
-      this.text = event;
-    });
-  }
 }
 ```
 
