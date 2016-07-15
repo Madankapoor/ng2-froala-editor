@@ -18,7 +18,9 @@ var FroalaEditorCompnoent = (function () {
     }
     FroalaEditorCompnoent.prototype.ngOnChanges = function (changes) {
         if (changes.hasOwnProperty('froalaData') && this.isEditorInitialized) {
-            this.setContent();
+            if (changes.froalaData.currentValue != this.froalaContent) {
+                this.setContent();
+            }
         }
     };
     FroalaEditorCompnoent.prototype.ngOnInit = function () {

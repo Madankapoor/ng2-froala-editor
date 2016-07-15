@@ -47,8 +47,13 @@ export class MainComponent implements OnInit {
   onEditorInitialized(event?: any) {
     this.editor1 = FroalaEditorCompnoent.getFroalaInstance();
     this.editor1.on('froalaEditor.contentChanged', (e, editor) => {
-      console.log("contentChanged");
+      // console.log("contentChanged");
     });
+
+    setTimeout(() => {
+      console.log("time out");
+      this.text = "<div>whatsup</div>";
+    }, 3000);
     // console.log(this.editor1);
   }
   

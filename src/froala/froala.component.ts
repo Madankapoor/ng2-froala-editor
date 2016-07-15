@@ -23,7 +23,9 @@ export class FroalaEditorCompnoent implements OnInit, OnDestroy {
 
   ngOnChanges(changes) {
     if (changes.hasOwnProperty('froalaData') && this.isEditorInitialized) {
-      this.setContent();
+      if (changes.froalaData.currentValue != this.froalaContent) {
+        this.setContent();
+      }
     }
   }
 

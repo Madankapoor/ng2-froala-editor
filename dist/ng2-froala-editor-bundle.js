@@ -27,7 +27,9 @@ System.register("src/froala/froala.component", ['@angular/core'], function(expor
                 }
                 FroalaEditorCompnoent.prototype.ngOnChanges = function (changes) {
                     if (changes.hasOwnProperty('froalaData') && this.isEditorInitialized) {
-                        this.setContent();
+                        if (changes.froalaData.currentValue != this.froalaContent) {
+                            this.setContent();
+                        }
                     }
                 };
                 FroalaEditorCompnoent.prototype.ngOnInit = function () {

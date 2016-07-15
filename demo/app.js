@@ -53,10 +53,14 @@ webpackJsonp([0],{
 	        });
 	    };
 	    MainComponent.prototype.onEditorInitialized = function (event) {
+	        var _this = this;
 	        this.editor1 = froala_component_1.FroalaEditorCompnoent.getFroalaInstance();
 	        this.editor1.on('froalaEditor.contentChanged', function (e, editor) {
-	            console.log("contentChanged");
 	        });
+	        setTimeout(function () {
+	            console.log("time out");
+	            _this.text = "<div>whatsup</div>";
+	        }, 3000);
 	    };
 	    MainComponent.prototype.onEditorInitialized2 = function (event) {
 	        this.editor2 = froala_component_1.FroalaEditorCompnoent.getFroalaInstance();
@@ -104,7 +108,9 @@ webpackJsonp([0],{
 	    }
 	    FroalaEditorCompnoent.prototype.ngOnChanges = function (changes) {
 	        if (changes.hasOwnProperty('froalaData') && this.isEditorInitialized) {
-	            this.setContent();
+	            if (changes.froalaData.currentValue != this.froalaContent) {
+	                this.setContent();
+	            }
 	        }
 	    };
 	    FroalaEditorCompnoent.prototype.ngOnInit = function () {
