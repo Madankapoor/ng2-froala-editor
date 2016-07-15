@@ -5,7 +5,7 @@ to easily integrate this powerful WYSIWYG editor into any applications.
 Most of the method calls, set up events listening, and options for the editors are still the same and follow the documentation of Froala Editor.  
 In order to use this component, you would need to include all the `font-awesome` css, `jQuery` and `Froala` js and css files in index.html
 Please feel free to make suggestions if you have ideas to improve it.  
-All development for this work sponsored by [Thrinacia, The Next Generation CrowdFunding Infrastructure - https://www.thrinacia.com](https://www.thrinacia.com).
+All development for this project sponsored by [Thrinacia, The Next Generation CrowdFunding Infrastructure - https://www.thrinacia.com](https://www.thrinacia.com).
 
 ## Demo
 
