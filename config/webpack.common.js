@@ -3,7 +3,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var helpers = require("./helpers");
 var path = require("path");
-var srcPath = path.join(__dirname, "/demo"); 
+var srcPath = path.join(__dirname, "/demo");
 
 var config = {
   entry: {
@@ -45,7 +45,12 @@ var config = {
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    })
+    }),
+    new webpack.ContextReplacementPlugin(
+      // The (\\|\/) piece accounts for path separators in *nix and Windows
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      __dirname + "./src" // location of your src
+    )
   ]
 };
 

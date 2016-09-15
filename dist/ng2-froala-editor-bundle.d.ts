@@ -21,6 +21,11 @@ declare module "src/froala/froala.component" {
         static getFroalaInstance(): any;
     }
 }
+declare module "src/froala/froala-editor.module" {
+    export class FroalaEditorModule {
+    }
+}
 declare module "ng2-froala-editor" {
-    export * from "src/froala/froala.component";
+    export { FroalaEditorCompnoent } from "src/froala/froala.component";
+    export { FroalaEditorModule } from "src/froala/froala-editor.module";
 }

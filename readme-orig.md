@@ -19,51 +19,58 @@ npm install ng2-froala-editor --save
 
 ### Angular 2 Version
 
-The current version used to develop this module is angular2 **2.0.0**.
-This is the final version of angular2. It may work in RC5, RC6 and RC7.
+The current version used to develop this module is angular2 **2.0.0-rc.4**.
+
+### CommonJS
+
+To use ng2-froala-editor, simply add this into your component
+```
+import {FroalaEditorCompnoent} from "ng2-froala-editor/ng2-froala-editor";
+```
+
+### SystemJS
+
+In your systemjs.config.js, add  
+```
+'ng2-froala-editor':          'node_modules/ng2-froala-editor'
+```
+into **map** property so it would like:
+```
+// map tells the System loader where to look for things
+var map = {
+  'app':                        'app', // 'dist',
+  '@angular':                   'node_modules/@angular',
+  'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
+  'rxjs':                       'node_modules/rxjs',
+  'ng2-froala-editor':          'node_modules/ng2-froala-editor'
+};
+```
+Also add:
+```
+'ng2-froala-editor':          { main: 'ng2-froala-editor.js', defaultExtension: 'js'}
+```
+into **packages** property so it would like:  
+```
+var packages = {
+  'app':                        { main: 'main.js',  defaultExtension: 'js' },
+  'rxjs':                       { defaultExtension: 'js' },
+  'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
+  'ng2-froala-editor':          { main: 'ng2-froala-editor.js', defaultExtension: 'js'}
+};
+```
 
 ## Example
 
-In your NgModule:
-
-```
-import {NgModule} from "@angular/core";
-import {BrowserModule} from "@angular/platform-browser";
-import {FormsModule} from "@angular/forms";
-import {FroalaEditorModule} from "ng2-froala-editor/ng2-froala-editor"; // <-- Import it in your NgModule
-import {HttpModule} from "@angular/http";
-import {MyComponent} from './My.component';
-import {MyService} from './My.service';
-
-@NgModule({
-  imports: [
-    BrowserModule,
-    FormsModule,
-    FroalaEditorModule  // <-- Include in your module
-  ],
-  declarations: [
-    MyComponent
-  ],
-  bootstrap: [
-    MyComponent
-  ],
-  providers: [
-    MyService
-  ]
-})
-
-export class AppModule { }
-```
-
-In your component:
 ```
 import {Component, OnInit} from "@angular/core";
+import {FroalaEditorCompnoent} from "ng2-froala-editor/ng2-froala-editor";
 
 @Component({
   selector: 'my-component',
   template: `
     <froala [froalaOptions]="froalaOptions" [froalaData]="text" (model)="onFroalaModelChanged($event)" (editorInitialized)="onEditorInitialized()"></froala>
-  `
+  `,
+  directives: [FroalaEditorCompnoent]
 })
 
 export class MyComponent implements OnInit {

@@ -1,13 +1,12 @@
 import {Component, OnInit, Input, Output, EventEmitter} from "@angular/core";
-import {FroalaEditorCompnoent} from "../froala/froala.component";
+import { FroalaEditorCompnoent } from '../froala/froala.component';
 
 declare var require: any;
 declare var $: any;
 
 @Component({
   selector: "main",
-  templateUrl: "./main.html",
-  directives: [FroalaEditorCompnoent]
+  templateUrl: "./main.html"
 })
 
 export class MainComponent implements OnInit {
@@ -51,15 +50,12 @@ export class MainComponent implements OnInit {
     });
 
     setTimeout(() => {
-      console.log("time out");
       this.text = "<div>whatsup</div>";
     }, 3000);
-    // console.log(this.editor1);
   }
   
   onEditorInitialized2(event?: any) {
     this.editor2 = FroalaEditorCompnoent.getFroalaInstance();
-    console.log(this.editor2);
   }
 
   testComponent() {

@@ -27,7 +27,7 @@ var config = {
 
   plugins: [
     new webpack.NoErrorsPlugin(),
-    new webpack.optimize.DedupePlugin(),
+    // new webpack.optimize.DedupePlugin(),
     // new webpack.optimize.UglifyJsPlugin()
   ]
 }

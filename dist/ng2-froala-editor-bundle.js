@@ -107,20 +107,64 @@ System.register("src/froala/froala.component", ['@angular/core'], function(expor
         }
     }
 });
-System.register("ng2-froala-editor", ["src/froala/froala.component"], function(exports_2, context_2) {
+System.register("src/froala/froala-editor.module", ['@angular/core', '@angular/platform-browser', '@angular/forms', "src/froala/froala.component"], function(exports_2, context_2) {
     "use strict";
     var __moduleName = context_2 && context_2.id;
-    function exportStar_1(m) {
-        var exports = {};
-        for(var n in m) {
-            if (n !== "default") exports[n] = m[n];
-        }
-        exports_2(exports);
-    }
+    var core_2, platform_browser_1, forms_1, froala_component_1;
+    var FroalaEditorModule;
     return {
         setters:[
+            function (core_2_1) {
+                core_2 = core_2_1;
+            },
+            function (platform_browser_1_1) {
+                platform_browser_1 = platform_browser_1_1;
+            },
+            function (forms_1_1) {
+                forms_1 = forms_1_1;
+            },
             function (froala_component_1_1) {
-                exportStar_1(froala_component_1_1);
+                froala_component_1 = froala_component_1_1;
+            }],
+        execute: function() {
+            FroalaEditorModule = (function () {
+                function FroalaEditorModule() {
+                }
+                FroalaEditorModule = __decorate([
+                    core_2.NgModule({
+                        imports: [
+                            platform_browser_1.BrowserModule,
+                            forms_1.FormsModule
+                        ],
+                        exports: [
+                            froala_component_1.FroalaEditorCompnoent
+                        ],
+                        declarations: [
+                            froala_component_1.FroalaEditorCompnoent
+                        ]
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], FroalaEditorModule);
+                return FroalaEditorModule;
+            }());
+            exports_2("FroalaEditorModule", FroalaEditorModule);
+        }
+    }
+});
+System.register("ng2-froala-editor", ["src/froala/froala.component", "src/froala/froala-editor.module"], function(exports_3, context_3) {
+    "use strict";
+    var __moduleName = context_3 && context_3.id;
+    return {
+        setters:[
+            function (froala_component_2_1) {
+                exports_3({
+                    "FroalaEditorCompnoent": froala_component_2_1["FroalaEditorCompnoent"]
+                });
+            },
+            function (froala_editor_module_1_1) {
+                exports_3({
+                    "FroalaEditorModule": froala_editor_module_1_1["FroalaEditorModule"]
+                });
             }],
         execute: function() {
         }
