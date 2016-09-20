@@ -107,18 +107,15 @@ System.register("src/froala/froala.component", ['@angular/core'], function(expor
         }
     }
 });
-System.register("src/froala/froala-editor.module", ['@angular/core', '@angular/platform-browser', '@angular/forms', "src/froala/froala.component"], function(exports_2, context_2) {
+System.register("src/froala/froala-editor.module", ['@angular/core', '@angular/forms', "src/froala/froala.component"], function(exports_2, context_2) {
     "use strict";
     var __moduleName = context_2 && context_2.id;
-    var core_2, platform_browser_1, forms_1, froala_component_1;
+    var core_2, forms_1, froala_component_1;
     var FroalaEditorModule;
     return {
         setters:[
             function (core_2_1) {
                 core_2 = core_2_1;
-            },
-            function (platform_browser_1_1) {
-                platform_browser_1 = platform_browser_1_1;
             },
             function (forms_1_1) {
                 forms_1 = forms_1_1;
@@ -133,7 +130,6 @@ System.register("src/froala/froala-editor.module", ['@angular/core', '@angular/p
                 FroalaEditorModule = __decorate([
                     core_2.NgModule({
                         imports: [
-                            platform_browser_1.BrowserModule,
                             forms_1.FormsModule
                         ],
                         exports: [
