@@ -58,6 +58,7 @@ export class AppModule { }
 In your component:
 ```
 import {Component, OnInit} from "@angular/core";
+import {FroalaEditorCompnoent} from 'ng2-froala-editor/ng2-froala-editor';    <-- add this to get instance of FroalaEditorComponent
 
 @Component({
   selector: 'my-component',

@@ -4627,8 +4627,19 @@ var Reflect;
 /* 408 */
 /***/ function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, process) {;
-;
+/* WEBPACK VAR INJECTION */(function(global, process) {/**
+* @license
+* Copyright Google Inc. All Rights Reserved.
+*
+* Use of this source code is governed by an MIT-style license that can be
+* found in the LICENSE file at https://angular.io/license
+*/
+(function (global, factory) {
+     true ? factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (factory());
+}(this, (function () { 'use strict';
+
 var Zone$1 = (function (global) {
     if (global.Zone) {
         throw new Error('Zone already loaded.');
@@ -4655,25 +4666,25 @@ var Zone$1 = (function (global) {
             enumerable: true,
             configurable: true
         });
-        ;
+        
         Object.defineProperty(Zone, "currentTask", {
             get: function () { return _currentTask; },
             enumerable: true,
             configurable: true
         });
-        ;
+        
         Object.defineProperty(Zone.prototype, "parent", {
             get: function () { return this._parent; },
             enumerable: true,
             configurable: true
         });
-        ;
+        
         Object.defineProperty(Zone.prototype, "name", {
             get: function () { return this._name; },
             enumerable: true,
             configurable: true
         });
-        ;
+        
         Zone.prototype.get = function (key) {
             var zone = this.getZoneWith(key);
             if (zone)
@@ -4782,7 +4793,7 @@ var Zone$1 = (function (global) {
         Zone.__symbol__ = __symbol__;
         return Zone;
     }());
-    ;
+    
     var ZoneDelegate = (function () {
         function ZoneDelegate(zone, parentDelegate, zoneSpec) {
             this._taskCounts = { microTask: 0, macroTask: 0, eventTask: 0 };
@@ -4940,7 +4951,7 @@ var Zone$1 = (function (global) {
         return ZoneTask;
     }());
     function __symbol__(name) { return '__zone_symbol__' + name; }
-    ;
+    
     var symbolSetTimeout = __symbol__('setTimeout');
     var symbolPromise = __symbol__('Promise');
     var symbolThen = __symbol__('then');
@@ -5047,12 +5058,12 @@ var Zone$1 = (function (global) {
                         throw new Error("Uncaught (in promise): " + value);
                     }
                     catch (e) {
-                        var error = e;
-                        error.rejection = value;
-                        error.promise = promise;
-                        error.zone = Zone.current;
-                        error.task = Zone.currentTask;
-                        _uncaughtPromiseErrors.push(error);
+                        var error_1 = e;
+                        error_1.rejection = value;
+                        error_1.promise = promise;
+                        error_1.zone = Zone.current;
+                        error_1.task = Zone.currentTask;
+                        _uncaughtPromiseErrors.push(error_1);
                         scheduleQueueDrain();
                     }
                 }
@@ -5218,7 +5229,7 @@ function bindArguments(args, source) {
     }
     return args;
 }
-;
+
 function patchPrototype(prototype, fnNames) {
     var source = prototype.constructor['name'];
     var _loop_1 = function(i) {
@@ -5236,7 +5247,7 @@ function patchPrototype(prototype, fnNames) {
         _loop_1(i);
     }
 }
-;
+
 var isWebWorker = (typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope);
 var isNode = (typeof process !== 'undefined' && {}.toString.call(process) === '[object process]');
 var isBrowser = !isNode && !isWebWorker && !!(typeof window !== 'undefined' && window['HTMLElement']);
@@ -5279,7 +5290,7 @@ function patchProperty(obj, prop) {
     };
     Object.defineProperty(obj, prop, desc);
 }
-;
+
 function patchOnProperties(obj, properties) {
     var onProperties = [];
     for (var prop in obj) {
@@ -5296,7 +5307,7 @@ function patchOnProperties(obj, properties) {
         }
     }
 }
-;
+
 var EVENT_TASKS = zoneSymbol('eventTasks');
 // For EventTarget
 var ADD_EVENT_LISTENER = 'addEventListener';
@@ -5412,6 +5423,7 @@ function makeZoneAwareRemoveListener(fnName, useCapturingParam) {
         }
     };
 }
+
 var zoneAwareAddEventListener = makeZoneAwareAddListener(ADD_EVENT_LISTENER, REMOVE_EVENT_LISTENER);
 var zoneAwareRemoveEventListener = makeZoneAwareRemoveListener(REMOVE_EVENT_LISTENER);
 function patchEventTargetMethods(obj) {
@@ -5486,7 +5498,7 @@ function patchClass(className) {
         }
     }
 }
-;
+
 function createNamedFn(name, delegate) {
     try {
         return (Function('f', "return function " + name + "(){return f(this, arguments)}"))(delegate);
@@ -5581,13 +5593,13 @@ function propertyPatch() {
         return desc;
     };
 }
-;
+
 function _redefineProperty(obj, prop, desc) {
     var originalConfigurableFlag = desc.configurable;
     desc = rewriteDescriptor(obj, prop, desc);
     return _tryDefineProperty(obj, prop, desc, originalConfigurableFlag);
 }
-;
+
 function isUnconfigurable(obj, prop) {
     return obj && obj[unconfigurablesKey] && obj[unconfigurablesKey][prop];
 }
@@ -5753,7 +5765,7 @@ function canPatchViaPropertyDescriptor() {
     Object.defineProperty(XMLHttpRequest.prototype, 'onreadystatechange', {});
     return result;
 }
-;
+
 var unboundKey = zoneSymbol('unbound');
 // Whenever any eventListener fires, we check the eventListener target and all parents
 // for `onwhatever` properties and replace them with zone-bound functions
@@ -5783,9 +5795,8 @@ function patchViaCapturingAllTheEvents() {
     for (var i = 0; i < eventNames.length; i++) {
         _loop_1(i);
     }
-    ;
+    
 }
-;
 
 function patchTimer(window, setName, cancelName, nameSuffix) {
     var setNative = null;
@@ -5941,6 +5952,9 @@ if (_global['navigator'] && _global['navigator'].geolocation) {
         'watchPosition'
     ]);
 }
+
+})));
+
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49), __webpack_require__(374)))
 
 /***/ },
