@@ -847,7 +847,7 @@ var DefaultValueAccessor = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abstract_form_group_directive__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__control_container__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng_form__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__template_driven_errors__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__template_driven_errors__ = __webpack_require__(321);
 /* unused harmony export modelGroupProvider */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgModelGroup; });
 /**
@@ -1084,7 +1084,7 @@ var RadioControlValueAccessor = (function () {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(320);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ReactiveErrors; });
 /**
  * @license
@@ -1513,7 +1513,7 @@ var SELECT_DIRECTIVES = [SelectMultipleControlValueAccessor, NgSelectMultipleOpt
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_shared__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__facade_async__ = __webpack_require__(87);
@@ -3107,7 +3107,7 @@ var NgControlStatusGroup = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ng_form__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ng_model_group__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__template_driven_errors__ = __webpack_require__(321);
 /* unused harmony export formControlBinding */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NgModel; });
 /**
@@ -4372,7 +4372,7 @@ function escapeRegExp(s) {
 
 /***/ },
 
-/***/ 321:
+/***/ 320:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4395,11 +4395,11 @@ var FormErrorExamples = {
 
 /***/ },
 
-/***/ 322:
+/***/ 321:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error_examples__ = __webpack_require__(320);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TemplateDrivenErrors; });
 /**
  * @license
@@ -4430,7 +4430,7 @@ var TemplateDrivenErrors = (function () {
 
 /***/ },
 
-/***/ 323:
+/***/ 322:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4546,7 +4546,7 @@ var FormBuilder = (function () {
 
 /***/ },
 
-/***/ 407:
+/***/ 409:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4557,35 +4557,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 var core_1 = __webpack_require__(1);
 var platform_browser_1 = __webpack_require__(120);
-var forms_1 = __webpack_require__(482);
-var froala_component_1 = __webpack_require__(926);
+var forms_1 = __webpack_require__(484);
+var froala_component_1 = __webpack_require__(923);
 var FroalaEditorModule = (function () {
     function FroalaEditorModule() {
     }
-    FroalaEditorModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule,
-                forms_1.FormsModule
-            ],
-            exports: [
-                froala_component_1.FroalaEditorCompnoent
-            ],
-            declarations: [
-                froala_component_1.FroalaEditorCompnoent
-            ],
-            bootstrap: [],
-            providers: [],
-        }), 
-        __metadata('design:paramtypes', [])
-    ], FroalaEditorModule);
     return FroalaEditorModule;
 }());
+FroalaEditorModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            platform_browser_1.BrowserModule,
+            forms_1.FormsModule
+        ],
+        exports: [
+            froala_component_1.FroalaEditorComponent
+        ],
+        declarations: [
+            froala_component_1.FroalaEditorComponent
+        ],
+        bootstrap: [],
+        providers: [],
+    })
+], FroalaEditorModule);
 exports.FroalaEditorModule = FroalaEditorModule;
 
 
@@ -5152,11 +5148,11 @@ function _mergeErrors(arrayOfErrors) {
 
 /***/ },
 
-/***/ 482:
+/***/ 484:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_forms__ = __webpack_require__(486);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_forms__ = __webpack_require__(488);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "AbstractControlDirective", function() { return __WEBPACK_IMPORTED_MODULE_0__src_forms__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "AbstractFormGroupDirective", function() { return __WEBPACK_IMPORTED_MODULE_0__src_forms__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(exports, "CheckboxControlValueAccessor", function() { return __WEBPACK_IMPORTED_MODULE_0__src_forms__["c"]; });
@@ -5208,7 +5204,7 @@ function _mergeErrors(arrayOfErrors) {
 
 /***/ },
 
-/***/ 483:
+/***/ 485:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5344,7 +5340,7 @@ var InternalFormsSharedModule = (function () {
 
 /***/ },
 
-/***/ 484:
+/***/ 486:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5377,14 +5373,14 @@ function normalizeAsyncValidator(validator) {
 
 /***/ },
 
-/***/ 485:
+/***/ 487:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(483);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(485);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_radio_control_value_accessor__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__form_builder__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__form_builder__ = __webpack_require__(322);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return FormsModule; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return ReactiveFormsModule; });
 /**
@@ -5438,7 +5434,7 @@ var ReactiveFormsModule = (function () {
 
 /***/ },
 
-/***/ 486:
+/***/ 488:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5460,10 +5456,10 @@ var ReactiveFormsModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__directives_select_control_value_accessor__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__directives_select_multiple_control_value_accessor__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__directives_validators__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__form_builder__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__form_builder__ = __webpack_require__(322);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__model__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__validators__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__form_providers__ = __webpack_require__(485);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__form_providers__ = __webpack_require__(487);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__directives_abstract_control_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__directives_abstract_form_group_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__directives_checkbox_value_accessor__["a"]; });
@@ -5607,7 +5603,7 @@ var ControlContainer = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validators__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__checkbox_value_accessor__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__default_value_accessor__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__normalize_validator__ = __webpack_require__(484);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__normalize_validator__ = __webpack_require__(486);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__number_value_accessor__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__radio_control_value_accessor__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__select_control_value_accessor__ = __webpack_require__(145);
@@ -5948,7 +5944,7 @@ var EventEmitter = (function (_super) {
 
 /***/ },
 
-/***/ 926:
+/***/ 923:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5963,33 +5959,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(1);
-var FroalaEditorCompnoent = (function () {
-    function FroalaEditorCompnoent(el) {
+var FroalaEditorComponent = FroalaEditorComponent_1 = (function () {
+    function FroalaEditorComponent(el) {
         this.el = el;
         this.model = new core_1.EventEmitter();
         this.editorInitialized = new core_1.EventEmitter();
         this.isEditorInitialized = false;
     }
-    FroalaEditorCompnoent.prototype.ngOnChanges = function (changes) {
+    FroalaEditorComponent.prototype.ngOnChanges = function (changes) {
         if (changes.hasOwnProperty('froalaData') && this.isEditorInitialized) {
             if (changes.froalaData.currentValue != this.froalaContent) {
                 this.setContent();
             }
         }
     };
-    FroalaEditorCompnoent.prototype.ngOnInit = function () {
-        FroalaEditorCompnoent.froalaEditorInstance = $(this.el.nativeElement).find("textarea");
+    FroalaEditorComponent.prototype.ngOnInit = function () {
+        FroalaEditorComponent_1.froalaEditorInstance = $(this.el.nativeElement).find("textarea");
         this.initListener();
         this.froalaOptions = this.froalaOptions ? this.froalaOptions : {};
-        FroalaEditorCompnoent.froalaEditorInstance.froalaEditor(this.froalaOptions);
+        FroalaEditorComponent_1.froalaEditorInstance.froalaEditor(this.froalaOptions);
     };
-    FroalaEditorCompnoent.prototype.ngOnDestroy = function () {
-        FroalaEditorCompnoent.froalaEditorInstance.off("froalaEditor.initialized");
-        FroalaEditorCompnoent.froalaEditorInstance.off("froalaEditor.contentChanged");
+    FroalaEditorComponent.prototype.ngOnDestroy = function () {
+        FroalaEditorComponent_1.froalaEditorInstance.off("froalaEditor.initialized");
+        FroalaEditorComponent_1.froalaEditorInstance.off("froalaEditor.contentChanged");
     };
-    FroalaEditorCompnoent.prototype.initListener = function () {
+    FroalaEditorComponent.prototype.initListener = function () {
         var _this = this;
-        FroalaEditorCompnoent.froalaEditorInstance.on('froalaEditor.initialized', function (e, editor) {
+        FroalaEditorComponent_1.froalaEditorInstance.on('froalaEditor.initialized', function (e, editor) {
             _this.isEditorInitialized = true;
             if (_this.froalaData) {
                 _this.setContent();
@@ -5997,22 +5993,22 @@ var FroalaEditorCompnoent = (function () {
             _this.getContent();
             _this.editorInitialized.emit(null);
         });
-        FroalaEditorCompnoent.froalaEditorInstance.on('froalaEditor.contentChanged', function (e, editor) {
+        FroalaEditorComponent_1.froalaEditorInstance.on('froalaEditor.contentChanged', function (e, editor) {
             if (_this.isEditorInitialized) {
                 _this.getContent();
             }
         });
     };
-    FroalaEditorCompnoent.prototype.setDefaultContent = function () {
+    FroalaEditorComponent.prototype.setDefaultContent = function () {
         var content = "<p></p>";
-        FroalaEditorCompnoent.froalaEditorInstance.froalaEditor('html.set', content);
+        FroalaEditorComponent_1.froalaEditorInstance.froalaEditor('html.set', content);
         this.model.emit(content);
     };
-    FroalaEditorCompnoent.prototype.setContent = function () {
-        FroalaEditorCompnoent.froalaEditorInstance.froalaEditor('html.set', this.froalaData);
+    FroalaEditorComponent.prototype.setContent = function () {
+        FroalaEditorComponent_1.froalaEditorInstance.froalaEditor('html.set', this.froalaData);
     };
-    FroalaEditorCompnoent.prototype.getContent = function () {
-        this.froalaContent = FroalaEditorCompnoent.froalaEditorInstance.froalaEditor('html.get', true);
+    FroalaEditorComponent.prototype.getContent = function () {
+        this.froalaContent = FroalaEditorComponent_1.froalaEditorInstance.froalaEditor('html.get', true);
         if (!this.froalaContent) {
             this.setDefaultContent();
         }
@@ -6020,52 +6016,53 @@ var FroalaEditorCompnoent = (function () {
             this.model.emit(this.froalaContent);
         }
     };
-    FroalaEditorCompnoent.getFroalaInstance = function () {
-        return FroalaEditorCompnoent.froalaEditorInstance;
+    FroalaEditorComponent.getFroalaInstance = function () {
+        return FroalaEditorComponent_1.froalaEditorInstance;
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], FroalaEditorCompnoent.prototype, "froalaData", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], FroalaEditorCompnoent.prototype, "froalaOptions", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], FroalaEditorCompnoent.prototype, "model", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], FroalaEditorCompnoent.prototype, "editorInitialized", void 0);
-    FroalaEditorCompnoent = __decorate([
-        core_1.Component({
-            selector: 'froala',
-            template: "<textarea></textarea>"
-        }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], FroalaEditorCompnoent);
-    return FroalaEditorCompnoent;
+    return FroalaEditorComponent;
 }());
-exports.FroalaEditorCompnoent = FroalaEditorCompnoent;
-
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], FroalaEditorComponent.prototype, "froalaData", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], FroalaEditorComponent.prototype, "froalaOptions", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], FroalaEditorComponent.prototype, "model", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], FroalaEditorComponent.prototype, "editorInitialized", void 0);
+FroalaEditorComponent = FroalaEditorComponent_1 = __decorate([
+    core_1.Component({
+        selector: 'froala',
+        template: "<textarea></textarea>"
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], FroalaEditorComponent);
+exports.FroalaEditorComponent = FroalaEditorComponent;
+var FroalaEditorComponent_1;
+//# sourceMappingURL=froala.component.js.map
 
 /***/ },
 
-/***/ 927:
+/***/ 924:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 var platform_browser_dynamic_1 = __webpack_require__(174);
 var core_1 = __webpack_require__(1);
-var froala_editor_module_1 = __webpack_require__(407);
+var froala_editor_module_1 = __webpack_require__(409);
 core_1.enableProdMode();
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(froala_editor_module_1.FroalaEditorModule);
 
 
 /***/ }
 
-},[927]);
+},[924]);
 //# sourceMappingURL=app.js.map
