@@ -6046,7 +6046,7 @@ FroalaEditorComponent = FroalaEditorComponent_1 = __decorate([
 ], FroalaEditorComponent);
 exports.FroalaEditorComponent = FroalaEditorComponent;
 var FroalaEditorComponent_1;
-//# sourceMappingURL=froala.component.js.map
+
 
 /***/ },
 
