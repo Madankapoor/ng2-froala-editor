@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from "@angular/core";
-import { FroalaEditorCompnoent } from '../froala/froala.component';
+import { FroalaEditorComponent } from '../froala/froala.component';
 
 declare var require: any;
 declare var $: any;
@@ -44,7 +44,7 @@ export class MainComponent implements OnInit {
   }
 
   onEditorInitialized(event?: any) {
-    this.editor1 = FroalaEditorCompnoent.getFroalaInstance();
+    this.editor1 = FroalaEditorComponent.getFroalaInstance();
     this.editor1.on('froalaEditor.contentChanged', (e, editor) => {
       // console.log("contentChanged");
     });
@@ -55,7 +55,7 @@ export class MainComponent implements OnInit {
   }
   
   onEditorInitialized2(event?: any) {
-    this.editor2 = FroalaEditorCompnoent.getFroalaInstance();
+    this.editor2 = FroalaEditorComponent.getFroalaInstance();
   }
 
   testComponent() {
