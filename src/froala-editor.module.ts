@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { FroalaEditorComponent } from './froala/froala.component';
-import { MainComponent } from './main/Main.component';
+// import { MainComponent } from './main/Main.component';
 
 @NgModule({
   imports: [
@@ -13,11 +13,11 @@ import { MainComponent } from './main/Main.component';
     FroalaEditorComponent
   ],
   declarations: [
-    MainComponent,
+    // MainComponent,
     FroalaEditorComponent
   ],
   bootstrap: [
-    MainComponent
+    // MainComponent
   ],
   providers: [],
 })
