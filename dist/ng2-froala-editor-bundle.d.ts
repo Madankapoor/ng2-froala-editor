@@ -1,7 +1,7 @@
 /// <reference path="../typings/globals/core-js/index.d.ts" />
 declare module "src/froala/froala.component" {
     import { OnInit, OnDestroy, EventEmitter, ElementRef } from '@angular/core';
-    export class FroalaEditorCompnoent implements OnInit, OnDestroy {
+    export class FroalaEditorComponent implements OnInit, OnDestroy {
         private el;
         froalaData: string;
         froalaOptions: any;
@@ -26,6 +26,6 @@ declare module "src/froala/froala-editor.module" {
     }
 }
 declare module "ng2-froala-editor" {
-    export { FroalaEditorCompnoent } from "src/froala/froala.component";
+    export { FroalaEditorComponent } from "src/froala/froala.component";
     export { FroalaEditorModule } from "src/froala/froala-editor.module";
 }

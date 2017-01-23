@@ -25,7 +25,7 @@ The current version used to develop this module is angular2 **2.0.0-rc.4**.
 
 To use ng2-froala-editor, simply add this into your component
 ```
-import {FroalaEditorCompnoent} from "ng2-froala-editor/ng2-froala-editor";
+import {FroalaEditorComponent} from "ng2-froala-editor/ng2-froala-editor";
 ```
 
 ### SystemJS
@@ -63,14 +63,14 @@ var packages = {
 
 ```
 import {Component, OnInit} from "@angular/core";
-import {FroalaEditorCompnoent} from "ng2-froala-editor/ng2-froala-editor";
+import {FroalaEditorComponent} from "ng2-froala-editor/ng2-froala-editor";
 
 @Component({
   selector: 'my-component',
   template: `
     <froala [froalaOptions]="froalaOptions" [froalaData]="text" (model)="onFroalaModelChanged($event)" (editorInitialized)="onEditorInitialized()"></froala>
   `,
-  directives: [FroalaEditorCompnoent]
+  directives: [FroalaEditorComponent]
 })
 
 export class MyComponent implements OnInit {
@@ -97,7 +97,7 @@ export class MyComponent implements OnInit {
   }
 
   onEditorInitialized(event?: any) {
-    this.editor = FroalaEditorCompnoent.getFroalaInstance();
+    this.editor = FroalaEditorComponent.getFroalaInstance();
     this.editor.on('froalaEditor.focus', (e, editor) => {
       console.log("editor is focused");
     });
@@ -126,7 +126,7 @@ Use `onEditorInitialized()` function above as example:
 ```
 onEditorInitialized(event?: any) {
   // Save the editor instance
-  this.editor = FroalaEditorCompnoent.getFroalaInstance();
+  this.editor = FroalaEditorComponent.getFroalaInstance();
 
   // Listen to Froala Editor's event
   this.editor.on('froalaEditor.focus', (e, editor) => {

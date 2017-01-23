@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FroalaEditorCompnoent } from './froala.component';
+import { FroalaEditorComponent } from './froala.component';
 
 @NgModule({
   imports: [
     FormsModule
   ],
   exports: [
-    FroalaEditorCompnoent
+    FroalaEditorComponent
   ],
   declarations: [
-    FroalaEditorCompnoent
+    FroalaEditorComponent
   ]
 })
 export class FroalaEditorModule { }
