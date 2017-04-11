@@ -9,11 +9,9 @@ var commonConfig = require('./config/webpack.common.js');
 
 var config = {
   resolve: {
-    extensions: ['', '.js', '.ts'],
-    modulesDirectories: ['node_modules']
+    extensions: ['.js', '.ts'],
+    modules: ['node_modules']
   },
-
-  debug: true,
   devtool: "source-map"
 };
 

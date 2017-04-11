@@ -1,2 +1,6 @@
 node_modules
 npm-debug.log
+
+## ngc compiler files
+**/*.ngfactory.ts
+**/*.ngsummary.json

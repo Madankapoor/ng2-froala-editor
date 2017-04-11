@@ -1,15 +1,7 @@
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var FroalaEditorComponent = FroalaEditorComponent_1 = (function () {
+var FroalaEditorComponent = (function () {
     function FroalaEditorComponent(el) {
         this.el = el;
         this.model = new core_1.EventEmitter();
@@ -24,18 +16,18 @@ var FroalaEditorComponent = FroalaEditorComponent_1 = (function () {
         }
     };
     FroalaEditorComponent.prototype.ngOnInit = function () {
-        FroalaEditorComponent_1.froalaEditorInstance = $(this.el.nativeElement).find("textarea");
+        FroalaEditorComponent.froalaEditorInstance = $(this.el.nativeElement).find("textarea");
         this.initListener();
         this.froalaOptions = this.froalaOptions ? this.froalaOptions : {};
-        FroalaEditorComponent_1.froalaEditorInstance.froalaEditor(this.froalaOptions);
+        FroalaEditorComponent.froalaEditorInstance.froalaEditor(this.froalaOptions);
     };
     FroalaEditorComponent.prototype.ngOnDestroy = function () {
-        FroalaEditorComponent_1.froalaEditorInstance.off("froalaEditor.initialized");
-        FroalaEditorComponent_1.froalaEditorInstance.off("froalaEditor.contentChanged");
+        FroalaEditorComponent.froalaEditorInstance.off("froalaEditor.initialized");
+        FroalaEditorComponent.froalaEditorInstance.off("froalaEditor.contentChanged");
     };
     FroalaEditorComponent.prototype.initListener = function () {
         var _this = this;
-        FroalaEditorComponent_1.froalaEditorInstance.on('froalaEditor.initialized', function (e, editor) {
+        FroalaEditorComponent.froalaEditorInstance.on('froalaEditor.initialized', function (e, editor) {
             _this.isEditorInitialized = true;
             if (_this.froalaData) {
                 _this.setContent();
@@ -43,7 +35,7 @@ var FroalaEditorComponent = FroalaEditorComponent_1 = (function () {
             _this.getContent();
             _this.editorInitialized.emit(null);
         });
-        FroalaEditorComponent_1.froalaEditorInstance.on('froalaEditor.contentChanged', function (e, editor) {
+        FroalaEditorComponent.froalaEditorInstance.on('froalaEditor.contentChanged', function (e, editor) {
             if (_this.isEditorInitialized) {
                 _this.getContent();
             }
@@ -51,14 +43,14 @@ var FroalaEditorComponent = FroalaEditorComponent_1 = (function () {
     };
     FroalaEditorComponent.prototype.setDefaultContent = function () {
         var content = "<p></p>";
-        FroalaEditorComponent_1.froalaEditorInstance.froalaEditor('html.set', content);
+        FroalaEditorComponent.froalaEditorInstance.froalaEditor('html.set', content);
         this.model.emit(content);
     };
     FroalaEditorComponent.prototype.setContent = function () {
-        FroalaEditorComponent_1.froalaEditorInstance.froalaEditor('html.set', this.froalaData);
+        FroalaEditorComponent.froalaEditorInstance.froalaEditor('html.set', this.froalaData);
     };
     FroalaEditorComponent.prototype.getContent = function () {
-        this.froalaContent = FroalaEditorComponent_1.froalaEditorInstance.froalaEditor('html.get', true);
+        this.froalaContent = FroalaEditorComponent.froalaEditorInstance.froalaEditor('html.get', true);
         if (!this.froalaContent) {
             this.setDefaultContent();
         }
@@ -67,33 +59,24 @@ var FroalaEditorComponent = FroalaEditorComponent_1 = (function () {
         }
     };
     FroalaEditorComponent.getFroalaInstance = function () {
-        return FroalaEditorComponent_1.froalaEditorInstance;
+        return FroalaEditorComponent.froalaEditorInstance;
     };
     return FroalaEditorComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], FroalaEditorComponent.prototype, "froalaData", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], FroalaEditorComponent.prototype, "froalaOptions", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", core_1.EventEmitter)
-], FroalaEditorComponent.prototype, "model", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", core_1.EventEmitter)
-], FroalaEditorComponent.prototype, "editorInitialized", void 0);
-FroalaEditorComponent = FroalaEditorComponent_1 = __decorate([
-    core_1.Component({
-        selector: 'froala',
-        template: "<textarea></textarea>"
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
-], FroalaEditorComponent);
+FroalaEditorComponent.decorators = [
+    { type: core_1.Component, args: [{
+                selector: 'froala',
+                template: "<textarea></textarea>"
+            },] },
+];
+FroalaEditorComponent.ctorParameters = function () { return [
+    { type: core_1.ElementRef, },
+]; };
+FroalaEditorComponent.propDecorators = {
+    'froalaData': [{ type: core_1.Input },],
+    'froalaOptions': [{ type: core_1.Input },],
+    'model': [{ type: core_1.Output },],
+    'editorInitialized': [{ type: core_1.Output },],
+};
 exports.FroalaEditorComponent = FroalaEditorComponent;
-var FroalaEditorComponent_1;
 //# sourceMappingURL=froala.component.js.map

@@ -1,7 +1,7 @@
 {
   "name": "ng2-froala-editor",
-  "version": "1.0.15",
-  "description": "Froala Editor for Angular2",
+  "version": "1.0.16",
+  "description": "Froala Editor for Angular4",
   "repository": {
     "type": "git",
     "url": "https://github.com/Thrinacia/ng2-froala-editor"
@@ -13,23 +13,28 @@
     "typings": "typings",
     "play": "webpack-dev-server --inline --port 8085",
     "build-cjs": "tsc -p tsconfig.common.json",
+    "build-cjs-test": "\"node_modules/.bin/ngc\" -p tsconfig.common.json",
     "build-system": "tsc -p tsconfig.system.json",
-    "build": "rimraf dist && npm run build-cjs && npm run build-system && webpack --progress --colors --profile --bail --config webpack.prod.js && gulp build",
+    "build": "rimraf dist && npm run build-cjs-test && npm run build-system && webpack --progress --colors --profile --bail --config webpack.prod.js && gulp build",
     "test": "karma start config/karma.conf.js"
   },
   "license": "ISC",
   "devDependencies": {
-    "@angular/common": "2.0.0",
-    "@angular/compiler": "2.0.0",
-    "@angular/core": "2.0.0",
-    "@angular/forms": "2.0.0",
-    "@angular/http": "2.0.0",
-    "@angular/platform-browser": "2.0.0",
-    "@angular/platform-browser-dynamic": "2.0.0",
-    "@angular/router": "3.0.0",
+    "@angular/animations": "^4.0.0",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/http": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/platform-server": "^4.0.0",
+    "@angular/router": "^4.0.0",
     "angular2-template-loader": "^0.4.0",
     "concurrently": "^2.2.0",
     "core-js": "^2.4.1",
+    "eslint": "^3.19.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "gulp": "^3.9.1",
     "html-loader": "^0.4.4",
@@ -47,11 +52,11 @@
     "rxjs": "^5.0.0-beta.12",
     "systemjs": "^0.19.39",
     "ts-loader": "^0.8.2",
-    "typescript": "^2.0.3",
+    "typescript": "^2.2.2",
     "typings": "^1.4.0",
-    "webpack": "2.1.0-beta.22",
-    "webpack-dev-server": "2.1.0-beta.9",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2",
     "webpack-merge": "^0.14.1",
-    "zone.js": "^0.6.25"
+    "zone.js": "^0.8.5"
   }
 }

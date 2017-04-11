@@ -14,17 +14,16 @@ var config = {
   output: {
     path: srcPath,
     publicPath: '',
-    filename: '[name].js',
-    pathInfo: true
+    filename: '[name].js'
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.ts$/,
       loaders: ['ts-loader', 'angular2-template-loader'],
       exclude: ["/node_modules/"]
     }, {
       test: /\.html$/,
-      loader: 'html'
+      loader: 'html-loader'
     }, {
       test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
       loader: 'file?name=assets/[name].[hash].[ext]'
@@ -48,7 +47,8 @@ var config = {
     }),
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
-      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      // /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      /angular(\\|\/)core(\\|\/)@angular/,
       __dirname + "./src" // location of your src
     )
   ]

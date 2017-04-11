@@ -17,21 +17,21 @@ All development for this project sponsored by [Thrinacia, The Next Generation Cr
 npm install ng2-froala-editor --save
 ```
 
-### Angular 2 Version
+### Angular 4 Version
 
-The current version used to develop this module is angular2 **2.0.0**.
-This is the final version of angular2. It may work in RC5, RC6 and RC7.
+The most recent version of this module (1.0.16) uses **Angular 4.0.0**  
+If you have encountered problem, you may use the previous version (1.0.15), which was based on Angular 2.0.0
 
 ## Example
 
 In your NgModule:
 
 ```
-import {NgModule} from "@angular/core";
-import {BrowserModule} from "@angular/platform-browser";
-import {FormsModule} from "@angular/forms";
-import {FroalaEditorModule} from "ng2-froala-editor/ng2-froala-editor"; // <-- Import it in your NgModule
-import {HttpModule} from "@angular/http";
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
+import {FroalaEditorModule} from 'ng2-froala-editor/ng2-froala-editor'; // <-- Import it in your NgModule
+import {HttpModule} from '@angular/http';
 import {MyComponent} from './My.component';
 import {MyService} from './My.service';
 
@@ -57,7 +57,7 @@ export class AppModule { }
 
 In your component:
 ```
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit} from '@angular/core';
 import {FroalaEditorComponent} from 'ng2-froala-editor/ng2-froala-editor';    <-- add this to get instance of FroalaEditorComponent
 
 @Component({
@@ -69,7 +69,7 @@ import {FroalaEditorComponent} from 'ng2-froala-editor/ng2-froala-editor';    <-
 
 export class MyComponent implements OnInit {
 
-  text: string = '<div>Hey we are testing Froala Editor</div>';
+  text = '<div>Hey we are testing Froala Editor</div>';
   editor: any;
 
   froalaOptions: any = {

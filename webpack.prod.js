@@ -10,23 +10,18 @@ var config = {
   devtool: 'source-map',
 
   resolve: {
-    extensions: ['', '.js', '.ts'],
-    modulesDirectories: ['node_modules']
+    extensions: ['.js', '.ts'],
+    modules: ['node_modules']
   },
 
   output: {
     path: srcPath,
     publicPath: '',
-    filename: '[name].js',
-    pathInfo: true
-  },
-
-  htmlLoader: {
-    minimize: false
+    filename: '[name].js'
   },
 
   plugins: [
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     // new webpack.optimize.DedupePlugin(),
     // new webpack.optimize.UglifyJsPlugin()
   ]

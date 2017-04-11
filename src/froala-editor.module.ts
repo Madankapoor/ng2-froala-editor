@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { FroalaEditorComponent } from './froala/froala.component';
@@ -21,4 +21,7 @@ import { FroalaEditorComponent } from './froala/froala.component';
   ],
   providers: [],
 })
-export class FroalaEditorModule { }
+
+export class FroalaEditorModule { 
+  
+}
