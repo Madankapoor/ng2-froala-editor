@@ -1,4 +1,4 @@
-# Angular2 Component for Froala Editor
+# Angular Component for Froala Editor
 
 This is Angular2 component for [Froala Editor](https://github.com/froala/wysiwyg-editor). This allows developers
 to easily integrate this powerful WYSIWYG editor into any applications.
@@ -19,7 +19,7 @@ npm install ng2-froala-editor --save
 
 ### Angular 4 Version
 
-The most recent version of this module (1.0.16) uses **Angular 4.0.0**  
+The most recent version of this module (1.0.17) uses **Angular 4.0.0**  
 If you have encountered problem, you may use the previous version (1.0.15), which was based on Angular 2.0.0
 
 ## Example

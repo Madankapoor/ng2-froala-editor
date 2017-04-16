@@ -1,6 +1,6 @@
 {
   "name": "ng2-froala-editor",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Froala Editor for Angular4",
   "repository": {
     "type": "git",
@@ -12,10 +12,9 @@
     "tsc:w": "tsc -w",
     "typings": "typings",
     "play": "webpack-dev-server --inline --port 8085",
-    "build-cjs": "tsc -p tsconfig.common.json",
-    "build-cjs-test": "\"node_modules/.bin/ngc\" -p tsconfig.common.json",
+    "build-cjs": "\"node_modules/.bin/ngc\" -p tsconfig.common.json",
     "build-system": "tsc -p tsconfig.system.json",
-    "build": "rimraf dist && npm run build-cjs-test && npm run build-system && webpack --progress --colors --profile --bail --config webpack.prod.js && gulp build",
+    "build": "rimraf dist && npm run build-cjs && npm run build-system && webpack --progress --colors --profile --bail --config webpack.prod.js && gulp build",
     "test": "karma start config/karma.conf.js"
   },
   "license": "ISC",
