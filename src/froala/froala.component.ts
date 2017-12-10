@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy, Input, Output, EventEmitter, ElementRef } from '@angular/core';
+import {Component, OnInit, OnDestroy, Input, Output, EventEmitter, ElementRef , ViewChild} from '@angular/core';
 
 declare var $: any;
 
