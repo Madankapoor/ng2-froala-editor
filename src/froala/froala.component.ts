@@ -4,7 +4,7 @@ declare var $: any;
 
 @Component({
   selector: 'froala',
-  template:`<textarea></textarea>`
+  template:`<textarea #textfroala></textarea>`
 })
 
 export class FroalaEditorComponent implements OnInit, OnDestroy {
@@ -13,6 +13,9 @@ export class FroalaEditorComponent implements OnInit, OnDestroy {
   @Input() froalaOptions: any;
   @Output() model: EventEmitter<any> = new EventEmitter();
   @Output() editorInitialized: EventEmitter<any> = new EventEmitter();
+  
+  @ViewChild('textfroala') textarea: ElementRef;
+
   private static froalaEditorInstance: any;
   isEditorInitialized: Boolean = false;
   froalaContent: any;
@@ -30,7 +33,7 @@ export class FroalaEditorComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() { 
-    FroalaEditorComponent.froalaEditorInstance = $(this.el.nativeElement).find("textarea");
+    FroalaEditorComponent.froalaEditorInstance = textarea;
 
     // Initialize the listeners for froala editors
     this.initListener();
